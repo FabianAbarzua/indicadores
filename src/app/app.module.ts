@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './components/header/header.component';
 
 import { NgxUiLoaderModule } from "ngx-ui-loader";
 import { IndicadorService } from './services/indicador.service';
@@ -22,7 +21,6 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     ListadoComponent,
     DivisaComponent,
     DetalleDivisaComponent

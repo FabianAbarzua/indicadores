@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import * as moment from 'moment';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { DetalleService } from 'src/app/services/detalle.service';
-import { IndicadorService } from 'src/app/services/indicador.service';
 
 @Component({
   selector: 'app-detalle-divisa',
@@ -32,8 +31,7 @@ export class DetalleDivisaComponent implements OnInit {
   constructor(private active: ActivatedRoute,
     private ngxService: NgxUiLoaderService,
     private _location: Location,
-    private detalleDivisa: DetalleService,
-    private indicadorService: IndicadorService) { }
+    private detalleDivisa: DetalleService) { }
 
   ngOnInit(): void {
     this.ngxService.start();

@@ -1,4 +1,3 @@
-//https://api.cmfchile.cl/api-sbifv3/recursos_api/dolar/posteriores/2010/01/dias/01?apikey=SBIF9990SBIF44b7SBIF7f4c5a537d02358e1099&formato=xml
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, throwError } from 'rxjs';
