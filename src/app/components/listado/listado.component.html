@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container-fluid div-nav">
+		<mat-icon aria-hidden="false" aria-label="Example home icon">{{ icono }}</mat-icon>
+			{{ titulo }}
+	</div>
+</nav>
+<div class="content-wrapper container-fluid">
+	<ul class="list-group">
+		<li *ngFor="let indicador of indicadores" class="list-group-item item-indicador">
+			<div class="tipo-indicador">
+				<span style="font-weight: bold;">{{ indicador.tipo }}</span>
+				<span style="color: green; font-size: 12px;">Valor observado al {{ indicador.Fecha }} : <b>{{ indicador.tipo !== 'IPCs' ? '$' : '' }} {{ indicador.Valor }}</b></span>
+			</div>
+			<div class="icons-indicador" [routerLink]="['divisa', indicador.key]">
+				<mat-icon>info</mat-icon>
+				<mat-icon>keyboard_arrow_right</mat-icon>
+			</div>
+		</li>
+	</ul>
+</div>

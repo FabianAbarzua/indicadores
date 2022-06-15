@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.div-nav {
+	display: flex !important;
+	align-items: flex-start !important;
+	justify-content: flex-start !important;
+	gap: 10px;
+	font-weight: bold;
+}
+
+.div-nav > div {
+	font-weight: bold;
+}
+
+.div-home {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+	width: 50%;
+}
+
+.div-home:hover {
+	cursor: pointer;
+}

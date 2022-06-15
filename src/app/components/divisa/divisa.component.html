@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container-fluid div-nav">
+		<div class="div-home" (click)="goBack()">
+			<mat-icon aria-hidden="false" aria-label="Example home icon">{{ icono }}</mat-icon>
+			{{ titulo }}
+		</div>
+		<div *ngIf="data !== undefined">
+			{{ data.tipo }}
+		</div>
+	</div>
+</nav>
+<div class="content-wrapper container-fluid">
+	<ul class="list-group" *ngIf="data !== undefined">
+		<li *ngFor="let row of data.data" class="list-group-item">
+			<div class="item-divisa" [routerLink]="['detalle']">
+				<div style="width: 50%;">
+					<span style="font-weight: bold;">{{ row.Fecha | date:'dd-MM-yyyy' }}</span>
+				</div>
+				<div class="icons-indicador">
+					<span>{{ data.tipo !== 'IPCs' ? '$' : '' }} {{ row.Valor }}</span>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,19 @@
+.tipo-indicador {
+	display: flex;
+	flex-direction: column;
+}
+
+.item-indicador {
+	display: flex;
+	justify-content: space-between;
+}
+
+.icons-indicador {
+	display: flex;
+	align-items: center;
+	color: #1e209e;
+}
+
+.icons-indicador:hover {
+	cursor: pointer;
+}

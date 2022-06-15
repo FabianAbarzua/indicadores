@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container-fluid div-nav">
+		<div class="div-home" (click)="goBack()">
+			<mat-icon aria-hidden="false" aria-label="Example home icon">{{ icono }}</mat-icon>
+			{{ titulo }}
+		</div>
+		<div *ngIf="data !== undefined">
+			{{ data.tipo }}
+		</div>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="mx-auto mb-3" style="width: 80%; text-align: center;" *ngIf="data !== undefined">
+		<span style="color: green; font-size: 3rem;">{{ data.tipo !== 'IPCs' ? '$' : '' }} {{ data.data[data.data.length - 1].Valor }}</span>
+	</div>
+	<mat-card class="mb-4">
+		<form>
+			<div class="mb-3" *ngIf="data !== undefined">
+			  <label for="nombreDivisa" class="form-label">Nombre</label>
+			  <input type="text" class="form-control" id="nombreDivisa" value="{{ data.tipo }}" autocomplete="off" readonly>
+			  <div id="emailHelp" class="form-text"></div>
+			</div>
+			<div class="mb-3" *ngIf="data !== undefined">
+			  <label for="fecha" class="form-label">Fecha</label>
+			  <input type="date" class="form-control" id="fecha" value="{{ data.data[data.data.length - 1].Fecha }}" readonly>
+			</div>
+			<div class="mb-3">
+				<label for="fecha" class="form-label">Unidad de Medida</label>
+				<input type="text" class="form-control" id="fecha" value="{{ data.tipo !== 'IPCs' ? 'Pesos' : 'Índice Económico' }}" readonly>
+			</div>
+		  </form>
+	</mat-card>
+	<div class="mx-auto mt-5" style="width: 78vw; height: 40vh; text-align: center;">
+		<ngx-charts-bar-vertical
+			[scheme]="colorScheme"
+			[results]="single"
+			[gradient]="gradient"
+			[xAxis]="showXAxis"
+			[yAxis]="showYAxis"
+			[legend]="showLegend"
+			[showXAxisLabel]="showXAxisLabel"
+			[showYAxisLabel]="showYAxisLabel"
+			[xAxisLabel]="xAxisLabel"
+			[yAxisLabel]="yAxisLabel">
+		</ngx-charts-bar-vertical>
+	</div>
+</div>
